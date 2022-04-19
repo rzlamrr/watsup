@@ -43,11 +43,12 @@ global.Api = new NeoxrApi('YOUR_APIKEY_HERE')
 const start = async () => {
    global.client = Socket({
       logger: pino({
-         level: 'silent'
+         level: 'warn'
       }),
       printQRInTerminal: true,
-      browser: ['@neoxr / neoxr-bot (multi-device)', 'Chrome', '3.0'],
-      auth: state
+      browser: ['dvst', 'Chrome', '87'],
+      auth: state,
+      version: [2, 2212, 8]
    })
 
    client.ev.on('connection.update', async (update) => {
